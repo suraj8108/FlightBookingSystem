@@ -1,0 +1,39 @@
+.carousel-arrow{
+    width: 5%;
+}
+.section1{
+    height:auto;
+    background-color: #F4F4F8;
+}
+.card1{
+    height: 40vh;
+    background-color: #F4F4F8;
+}
+.Checkin{
+    height:87vh;
+    background-color: #F4F4F8;
+    color: #3A0210;
+}
+.fare{
+    position: fixed;
+    right:0px;
+    height:100vh;
+    padding-top:15vh;
+    background-color: #F4F4F8;
+}
+@media screen and (max-width: 1000px) {
+    .fare { 
+        position:relative;
+        width: 100vw;
+    }
+    
+  }
+.farecard{
+    background-color: #FFE6D6;
+}
+#seat-image{
+    display: none;
+}
+#acknowledgement{
+    display: none;
+}

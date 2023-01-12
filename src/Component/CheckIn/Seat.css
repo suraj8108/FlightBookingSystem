@@ -1,0 +1,20 @@
+.seat{
+    background-color: #F4F4F8;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    color:#3A0210
+}
+.individual{
+    width:15% !important;
+}
+
+.economy{
+    /* display: none; */
+}
+.business{
+    /* display: none; */
+}
+.seat-image{
+    width: 20%;
+}

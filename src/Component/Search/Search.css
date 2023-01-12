@@ -1,0 +1,66 @@
+.background{
+    background-color: #F4F4F8;
+}
+.navbar1{
+    background-color: #3A0210;
+} 
+.a{
+    color: white !important;
+}
+.bookcard1{
+    margin-top: 2vh !important;
+    border: 1px solid black !important;
+    background-color: white;
+    
+    
+}
+.cardtimes{
+    background-color: #FFE6D6 !important;
+}
+.firstrow{
+    display: flex;
+    justify-content: left;
+}
+.departure-image{
+    height:10vh;
+    width:27%;
+}
+button{
+    border:0px !important;
+    color: #3A0210;
+    background-color: white;
+}
+.dropdown-item{
+    color:#3A0210 !important;
+}
+.dropdown-item:hover{
+    color:white !important;
+    background-color: #3A0210 !important;
+}
+.dates{
+    border: 1px solid black;
+    border-radius: 3px ;
+    color:#3A0210;
+    font-weight: 200;
+    padding: 2vh;
+    height: 6.5vh;
+}
+.search{
+    background-color:white;
+    border: 1px solid #3A0210 !important;
+    border-radius: 50px;
+    color :#3A0210
+}
+.search:hover{
+    background-color: #3A0210;
+    color: white;
+}
+.search-results{
+    margin: 2vw !important;
+}
+.search-image{
+    width:2%
+}
+#arrival{
+    display: none;
+}

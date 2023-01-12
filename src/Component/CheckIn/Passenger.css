@@ -1,0 +1,13 @@
+.info{
+    border: 2px solid #3A0210;
+    height: 10vh;
+    border-radius:10px;
+    margin:1vw
+}
+.info:hover{
+    background-color: #3A0210 !important;
+    color: white;
+}
+.central{
+    width: 20%;
+}

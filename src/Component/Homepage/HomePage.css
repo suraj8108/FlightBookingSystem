@@ -1,0 +1,154 @@
+.background{
+    background-color: #F4F4F8;
+}
+.navlogo {
+    width: 4vw;
+    height: 6vh;
+}
+
+#id101{
+    display: none;
+}
+.logotext {
+    color: #FFE6D6 !important;
+}
+
+a {
+    color: #3A0210 !important;
+    text-decoration: none !important;
+}
+
+.navbar-list {
+    margin-left: 25vw;
+}
+
+.flightsearch {
+    background-image: url("./flightBanner.jpg");
+    width: 100%;
+    height: 60vh;
+    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bookcard{
+    margin-top: -7.20vh !important;
+    border: 0px !important;
+    background-color: white;
+    
+    
+}
+.cardtimes{
+    background-color: #FFE6D6 !important;
+}
+.cardtitle{
+    background-color: #3A0210;
+    color: white;
+}
+.firstrow{
+    display: flex;
+    justify-content: left;
+}
+.departure-image{
+    height:10vh;
+    width:27%;
+}
+button{
+    border:0px !important;
+    color: #3A0210;
+    background-color: white;
+}
+.dropdown-item{
+    color:#3A0210 !important;
+}
+.dropdown-item:hover{
+    color:white !important;
+    background-color: #3A0210 !important;
+}
+.dates{
+    border: 1px solid black;
+    border-radius: 3px ;
+    color:#3A0210;
+    font-weight: 200;
+    padding: 2vh;
+    height: 6.5vh;
+}
+.search{
+    background-color:white;
+    border: 1px solid #3A0210 !important;
+    border-radius: 50px;
+    color :#3A0210
+}
+.search:hover{
+    background-color: #3A0210;
+    color: white;
+}
+
+.carousel-item{
+    height: 90vh;
+}
+.info1{
+    height: 55vh;
+}
+
+
+.flip-card {
+    background-color: transparent;
+    width: 90% ;
+    margin-left: 1vw;
+    height: 40vh;
+    border: 1px solid white;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color:#BDA69F;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #3A0210;
+    color: white;
+    padding-left:3vw;
+    padding-right: 3vw;
+    padding-top: 3vh;
+    transform: rotateY(180deg);
+  }
+
+.modal-content{
+    width:90vw !important;
+    margin-left: -25vw !important;
+}
+.modal-body{
+    margin-top: -2vh;
+}
+.footer1{
+    background-color: #FFE6D6;
+}

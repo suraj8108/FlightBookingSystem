@@ -1,0 +1,15 @@
+.flightNo{
+    width:10%;
+    padding-top: 2vh;
+}
+.search-card{
+    color:#3A0210;
+}
+.card-search{
+    border:1px solid #3A0210;
+    background-color: white;
+}
+.card-search:hover{
+    background-color: #3A0210;
+    color: white;
+}
