@@ -63,9 +63,9 @@ function App() {
 
   return (
     // <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
-    //<Search/>
-    // <HomePage/>
-    <CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
+    <Search/>
+    //  <HomePage/>
+    //<CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
     // <Passenger/>
     // <TermsAndConditions/>
     //<CheckInComplete />

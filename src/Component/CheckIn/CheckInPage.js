@@ -128,7 +128,7 @@ const CheckInPage = (props) => {
                         </div>
                     </div>
                     <div class="fare fl w-100-ns w-100-m w-30-l tc ">
-                        <article class="center w-100 br3 hidden ba b--black-10 ">
+                        <article class="center w-90 br3 hidden ba b--black-10 ">
                             <h1 class="f4 br3 bg-white br--top mv0 pv2 ph3">Total Check In Fare</h1>
                             <div class="  pa3 bg-white f4 bt b--black-10 br4">
                                 <div class="cf">

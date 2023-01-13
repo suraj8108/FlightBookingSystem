@@ -1,7 +1,10 @@
 import React from "react";
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet,Svg,Image } from '@react-pdf/renderer';
 import ReactPDF from '@react-pdf/renderer';
 import { PDFViewer } from '@react-pdf/renderer';
+import Barcode from "react-barcode";
+import logo from "./logo.png"
+import {useBarcode} from "@createnextapp/react-barcode"
 
 const BoardingPass = () => {
 
@@ -20,7 +23,8 @@ const BoardingPass = () => {
             flexGrow: 1,
             border: "1px solid #3A0210",
             borderRadius: "10px",
-            flexDirection: "column"
+            flexDirection: "column",
+            backgroundImage:{logo}
         },
         section1: {
             backgroundColor: "#3A0210",
@@ -98,6 +102,7 @@ const BoardingPass = () => {
                                     <Text style={{ paddingTop: 20 }}>
                                         Boarding: 1105
                                     </Text>
+                                    <Text></Text>
                                 </View>
                                 <View style={styles.section5}>
                                     <View style={styles.section4}>
@@ -121,14 +126,16 @@ const BoardingPass = () => {
                                     <Text style={{ paddingTop: 20 }}>
                                         Boarding: 1105
                                     </Text>
+                                    <Text>
+                                    <Barcode value="Cake"/>
+                                    </Text>
+                                    
                                     </View>
                                 </View>
                             </View>
                         </View>
                     </View>
-                    <Text>
-
-                    </Text>
+                    
                 </View>
             </Page>
         </Document>

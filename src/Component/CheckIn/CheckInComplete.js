@@ -7,6 +7,7 @@ import icici from "../Homepage/icici.png"
 import loyalty from "../Homepage/loyalty.jpg"
 import "./CheckInComplete.css"
 import BoardingPass from "./BoardingPass";
+import Barcode from "react-barcode"
 
 const CheckInComplete = () => {
 
@@ -33,17 +34,18 @@ const CheckInComplete = () => {
                 </div>
             </nav>
             <div class="tc-l mt6 mt5-m mt5-l ph3">
-                <h1 class="f2 f1-l fw2 black mb0 lh-title">Check-In Successful <img src={tick} className="w-10" alt="successful" /></h1>
+                <h1 class="f2 f1-l fw2 black mb0 lh-title">Check-In Successful <img src={tick} className="w3" alt="successful" /></h1>
                 <h2 class="fw1 f3 black mt3 mb4">Please find your boarding pass and baggage tag below</h2>
 
             </div>
             <div className="All printable Items">
                 <div class="cf">
                     <div class="fl w-50 tc pv5">
-                        <button data-bs-toggle="modal" data-bs-target="#boardingpass" className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/boardingpass.png" className="w-20"/></button>
+                        <button data-bs-toggle="modal" data-bs-target="#boardingpass" className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/boardingpass.png" className="w-20"/></button> <br/>Get your Boarding Pass here
                     </div>
                     <div class="fl w-50 tc pv5 bg-black-025">
-                        <button className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/baggage.png" className="w-80"/></button>
+                        <button className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/baggage.png" className="w-80"/></button><br/>Get your Baggage Tag here
+                        
                     </div>
                 </div>
 
