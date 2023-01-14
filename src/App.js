@@ -13,6 +13,8 @@ import TermsAndConditions from './Component/CheckIn/TermsAndConditions';
 import {useNavigate} from "react-router-dom"
 import CheckInComplete from './Component/CheckIn/CheckInComplete';
 import BoardingPass from './Component/CheckIn/BoardingPass';
+import BookingComplete from './Component/Booking/BookingComplete';
+import FlightTickets from './Component/Booking/FlightTickets';
 
 function App() {
 
@@ -38,7 +40,7 @@ function App() {
       seat:"",
     }
   ])
-  const [type , setType]=useState("economy")
+  const [type , setType]=useState("business")
 
   const CheckinHandler=(passengerlist)=>{
     
@@ -63,12 +65,15 @@ function App() {
 
   return (
     // <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
-    <Search/>
-    //  <HomePage/>
+    
+    // <Search/>
+    //<HomePage/>
     //<CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
     // <Passenger/>
     // <TermsAndConditions/>
     //<CheckInComplete />
+    <BookingComplete/>
+    //<FlightTickets/>
     //<BoardingPass/>
   );
 }

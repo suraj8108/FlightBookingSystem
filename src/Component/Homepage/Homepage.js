@@ -700,7 +700,7 @@ const HomePage = () => {
                             </ul>
                             <span class="navbar-text">
                                 <button type="button" class="btn me-2 btn-outline-dark" data-bs-toggle="modal" data-bs-target="#CheckIn">Check In</button>
-                                <button type="button" className="btn me-2 btn-outline-dark">About us</button>
+                                <button type="button" className="btn me-2 btn-outline-dark" onClick={()=>document.getElementById('footer').scrollIntoView()}>Contact us</button>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn me-2 btn-outline-dark">Login</button>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#Register" class="btn  me-2 btn-outline-dark">Register</button>
                             </span>
@@ -899,7 +899,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div className="footer1">
+            <div className="footer1" id="footer">
                 <footer class="pa4 pa4-l black-70 bt b--black-10">
                     <div class="cf">
                         <h1 class="fl w-100 pv0 f5 f4-l fw6 tracked ">Office Address</h1>
@@ -915,7 +915,7 @@ const HomePage = () => {
                     </div>
                     <section class="cf ">
                         <div class=" mb0-ns w-100 w-50-l fr">
-                            <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:hello@impossible.com" >
+                            <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:contact@brownfield.com" >
                                 contact@brownfield.com
                             </a>
                         </div>

@@ -4,7 +4,7 @@ import flightNo from "./FlightNo.png"
 
 const SearchResult = (props) => {
     return (
-        <div class="search-card w-100">
+        <div class="search-card">
             <article class="card-search center w-90 br3 hidden ba b--black-100 mv2">
                 <div class="pa3">
                     <div class="cf">
