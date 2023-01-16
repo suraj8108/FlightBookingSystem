@@ -700,7 +700,7 @@ const HomePage = () => {
                             </ul>
                             <span class="navbar-text">
                                 <button type="button" class="btn me-2 btn-outline-dark" data-bs-toggle="modal" data-bs-target="#CheckIn">Check In</button>
-                                <button type="button" className="btn me-2 btn-outline-dark">About us</button>
+                                <button type="button" className="btn me-2 btn-outline-dark" onClick={()=>document.getElementById('footer').scrollIntoView()}>Contact us</button>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn me-2 btn-outline-dark">Login</button>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#Register" class="btn  me-2 btn-outline-dark">Register</button>
                             </span>
@@ -710,7 +710,7 @@ const HomePage = () => {
                 </nav>
             </div>
 
-            <article class=" bookcard center mw7 mw8-ns br4  hidden mv4">
+            <article class=" bookcard center w-90 br4  hidden mv4">
                 <h1 class="f4 cardtitle br4 br--top tc black-60 mv0 pv2 ph3">Book Now</h1>
                 <div class="pa3 bt">
                     <div class="cf">
@@ -810,7 +810,7 @@ const HomePage = () => {
 
                         </div>
                         <div class="fl mt-2 w-100 w-20-ns tc pv2">
-                            <button class="f6 search grow w-20 ba no-underline ph3 pv2 mb2 dib white " href="#0">Search</button>
+                            <button class="f5 fw6 search grow w-20 ba no-underline ph3 pv2 mb2 dib white " href="#0">Search</button>
                         </div>
                     </div>
                 </div>
@@ -899,22 +899,23 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div className="footer1">
-                <footer class="pa4 pa5-l black-70 bt b--black-10">
+            <div className="footer1" id="footer">
+                <footer class="pa4 pa4-l black-70 bt b--black-10">
                     <div class="cf">
-                        <h1 class="fl w-100 pv0 f6 fw6 ttu tracked ">Office Address</h1>
+                        <h1 class="fl w-100 pv0 f5 f4-l fw6 tracked ">Office Address</h1>
                         <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l pr2 pr0-ns">
                             <h4 class="f5 f4-l fw6">Pune , India</h4>
                             <span class="f7 f6-l db black-70">Brownfield St.</span>
                             <span class="f7 f6-l black-70">Pune, MH 441016 </span>
+                            
                             <a class="f6 db fw6 pv3 black-70 link dim" title="Call SF" href="tel:+12075555555">
-                                +91 901-988-3456
+                            Phone Number: +91 901-988-3456
                             </a>
                         </article>
                     </div>
                     <section class="cf ">
                         <div class=" mb0-ns w-100 w-50-l fr">
-                            <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:hello@impossible.com" >
+                            <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:contact@brownfield.com" >
                                 contact@brownfield.com
                             </a>
                         </div>

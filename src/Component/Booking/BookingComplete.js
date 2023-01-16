@@ -1,17 +1,14 @@
 import React from "react";
-import logo from "./logo.png";
-import tick from "./confirm.png"
-import "./CheckInComplete.css"
-import BoardingPass from "./BoardingPass";
-import Barcode from "react-barcode"
+import BoardingPass from "../CheckIn/BoardingPass";
+import Barcode from "react-barcode";
+import FlightTickets from "./FlightTickets";
 
-const CheckInComplete = () => {
-
+const BookingComplete = () => {
     return (
-        <div className="CheckInDone">
+        <div className="BookingComplete">
             <nav class="navbar navbar1 navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="" href="/"><img className="ms-4 navlogo" alt="" src={logo} /> <br /><span class="ms-1 logotext">BROWNFIELD</span> </a>
+                    <a class="" href="/"><img className="ms-4 navlogo" alt="" src="/assets/images/logo.png" /> <br /><span class="ms-1 logotext">BROWNFIELD</span> </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -29,22 +26,14 @@ const CheckInComplete = () => {
                     </div>
                 </div>
             </nav>
-            <div class="tc-l mt6 mt5-m mt5-l ph3">
-                <h1 class="f2 f1-l fw2 black mb0 lh-title">Check-In Successful <img src={tick} className="w3" alt="successful" /></h1>
-                <h2 class="fw1 f3 black mt3 mb4">Please find your boarding pass and baggage tag below</h2>
-
+            <div class="tc mt6 mt5-m mt5-l ph3">
+                <h1 class="f2 f1-l fw2 black mb0 lh-title">Tickets Booked Successfully <img src="/assets/images/confirm.png" className="w3" alt="successful" /></h1>
+                <h2 class="fw1 f3 black mt3 mb4">Please find your Tickets below</h2>
             </div>
-            <div className="All printable Items">
-                <div class="cf">
-                    <div class="fl w-50 tc pv5">
-                        <button data-bs-toggle="modal" data-bs-target="#boardingpass" className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/boardingpass.png" className="w-20"/></button> <br/>Get your Boarding Pass here
-                    </div>
-                    <div class="fl w-50 tc pv5 bg-black-025">
-                        <button className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><Barcode className="w-30" value="PNR+LastName"/></button><br/>Take a photo of the above barcode for your baggage tag
-                        
-                    </div>
+            <div className="cf">
+                <div className="w-100 tc">
+                <button data-bs-toggle="modal" data-bs-target="#boardingpass" className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/ticket.png" className="w-20"/></button> <br/>Get your ticket above
                 </div>
-
             </div>
             <div className="Adverts mt5">
                 <div class=" row2  fl w-50-ns w-25-l pr2 tc  ">
@@ -198,13 +187,13 @@ const CheckInComplete = () => {
                         
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-body">
-                            <BoardingPass/>
+                            <FlightTickets/>
                         </div>
                     </div>
                 </div>
             </div>
         </div >
+        
     )
 }
-
-export default CheckInComplete
+export default BookingComplete

@@ -13,6 +13,10 @@ import TermsAndConditions from './Component/CheckIn/TermsAndConditions';
 import {useNavigate} from "react-router-dom"
 import CheckInComplete from './Component/CheckIn/CheckInComplete';
 import BoardingPass from './Component/CheckIn/BoardingPass';
+import BookingComplete from './Component/Booking/BookingComplete';
+import FlightTickets from './Component/Booking/FlightTickets';
+import Booking from './Component/Booking/Booking';
+import UserProfile from './Component/Login/UserProfile';
 import Header from './Component/Header/Header';
 import Footer  from './Component/Footer/Footer';
 
@@ -40,7 +44,7 @@ function App() {
       seat:"",
     }
   ])
-  const [type , setType]=useState("economy")
+  const [type , setType]=useState("business")
 
   const CheckinHandler=(passengerlist)=>{
     
@@ -65,13 +69,18 @@ function App() {
 
   return (
     // <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
+    
     // <Search/>
-    // <HomePage/>
-    // <CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
-    // <Passenger/>
-    // <TermsAndConditions/>
+    //<HomePage/>
+    //<CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
+    //<Passenger/>
+    //<TermsAndConditions/>
     //<CheckInComplete />
+    //<BookingComplete/>
+    //<FlightTickets/>
     //<BoardingPass/>
+    //<Booking/>
+    //<UserProfile/>
 
     <div className='App'>
       <Header/>

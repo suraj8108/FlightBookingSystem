@@ -702,8 +702,8 @@ const Search = () => {
                     </div>
                 </div>
             </nav>
-            <article class=" bookcard1 center mw7 mw8-ns br4  hidden mv4">
-                <div class="pa3 ">
+            <article class=" bookcard1 center w-90 br4 hidden mv4">
+                <div class="pa3">
                     <div class="cf">
                         <div class="fl w-100 w-20-ns tl pv1">
                             <div class="firstrow">
@@ -801,23 +801,23 @@ const Search = () => {
 
                         </div>
                         <div class="fl mt-2 w-100 w-20-ns tc pv2">
-                            <button class="f6 search grow w-20 ba no-underline ph3 pv2 mb2 dib white " href="#0">Modify</button>
+                            <button class="f5 fw5 search grow w-20 ba no-underline ph3 pv2 mb2 dib white " href="#0">Modify</button>
                         </div>
                     </div>
                 </div>
             </article>
             <div class="search-results">
                 <div class="departing mb4">
-                    <p> Deparating Flights <img src="/assets/images/departure.png" className="search-image"/></p>
-                    <h3 className="mb4"> Kochi to Delhi <span>23 January</span></h3> 
+                    <p className="ml5"> Deparating Flights <img src="/assets/images/departure.png" className="search-image"/></p>
+                    <h3 className="mb2 ml5"> Kochi to Delhi <span>23 January</span></h3> 
                     <SearchResult/>
                     <SearchResult/>
                     <SearchResult/>
                     <SearchResult/>
                 </div>
                 <div id="arrival">
-                    <p> Returning Flights <img src="/assets/images/arrival.png" className="search-image"/></p>
-                    <h3 className="mb4"> Delhi to Kochi <span>30 January</span></h3> 
+                    <p className="ml5"> Returning Flights <img src="/assets/images/arrival.png" className="search-image"/></p>
+                    <h3 className="mb2 ml5"> Delhi to Kochi <span>30 January</span></h3> 
                     <SearchResult/>
                     <SearchResult/>
                     <SearchResult/>
