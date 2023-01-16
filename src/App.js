@@ -13,6 +13,8 @@ import TermsAndConditions from './Component/CheckIn/TermsAndConditions';
 import {useNavigate} from "react-router-dom"
 import CheckInComplete from './Component/CheckIn/CheckInComplete';
 import BoardingPass from './Component/CheckIn/BoardingPass';
+import Header from './Component/Header/Header';
+import Footer  from './Component/Footer/Footer';
 
 function App() {
 
@@ -63,13 +65,23 @@ function App() {
 
   return (
     // <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
-    //<Search/>
+    // <Search/>
     // <HomePage/>
-    <CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
+    // <CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
     // <Passenger/>
     // <TermsAndConditions/>
     //<CheckInComplete />
     //<BoardingPass/>
+
+    <div className='App'>
+      <Header/>
+      <Footer/>
+    </div>
+
+
+
+
+
   );
 }
 

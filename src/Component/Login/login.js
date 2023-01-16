@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./login.css";
 import md5 from "md5";
+import { authService } from "../../Service/AuthService";
 const Login = () => {
 
     const [email , setEmail] = useState("");
@@ -16,19 +17,22 @@ const Login = () => {
         setPassword(e.target.value)  
     }
 
-    const onSubmitHandler=()=>{
-        const user= ({
-            email:email,
-            password:md5(password)
-        })
+    const onSubmitHandler = async ()=>{
+        const user= {
+            username : email,
+            password : password
+        }
         console.log(user)
-        axios.post("http://localhost:8085/login", user).then(res => {
-            console.log(res.data)
+        // axios.post("http://localhost:9989/token", user).then(res => {
+           
+        //     console.log(res.data)
 
-        }).catch(err => {
-            alert("error")
-            alert(err.response.data.message)
-        })
+        // }).catch(err => {
+        //     alert("error")
+        //     alert(err.response.data.message)
+        // })
+
+        await authService(user);
 
     }
 
