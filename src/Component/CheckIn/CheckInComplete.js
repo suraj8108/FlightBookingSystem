@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./logo.png";
 import tick from "./confirm.png"
 import "./CheckInComplete.css"
 import BoardingPass from "./BoardingPass";
@@ -10,7 +11,7 @@ const CheckInComplete = () => {
         <div className="CheckInDone">
             <nav class="navbar navbar1 navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="" href="/"><img className="ms-4 navlogo" alt="" src="/assets/images/logo.png" /> <br /><span class="ms-1 logotext">BROWNFIELD</span> </a>
+                    <a class="" href="/"><img className="ms-4 navlogo" alt="" src={logo} /> <br /><span class="ms-1 logotext">BROWNFIELD</span> </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -36,7 +37,7 @@ const CheckInComplete = () => {
             <div className="All printable Items">
                 <div class="cf">
                     <div class="fl w-50 tc pv5">
-                        <button data-bs-toggle="modal" data-bs-target="#boardingpass" className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/boardingpass.png" className="w-20"/></button> <br/>Get your Boarding Pass here
+                
                     </div>
                     <div class="fl w-50 tc pv5 bg-black-025">
                         <button className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/baggage.png" className="w-80"/></button><br/>Get your Baggage Tag here

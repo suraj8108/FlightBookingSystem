@@ -15,6 +15,8 @@ import CheckInComplete from './Component/CheckIn/CheckInComplete';
 import BoardingPass from './Component/CheckIn/BoardingPass';
 import BookingComplete from './Component/Booking/BookingComplete';
 import FlightTickets from './Component/Booking/FlightTickets';
+import Booking from './Component/Booking/Booking';
+import UserProfile from './Component/Login/UserProfile';
 
 function App() {
 
@@ -72,9 +74,11 @@ function App() {
     // <Passenger/>
     // <TermsAndConditions/>
     //<CheckInComplete />
-    <BookingComplete/>
+    //<BookingComplete/>
     //<FlightTickets/>
     //<BoardingPass/>
+    //<Booking/>
+    <UserProfile/>
   );
 }
 

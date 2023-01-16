@@ -110,6 +110,9 @@ const FlightTickets = () => {
                             Arrival - 13:05
                         </Text>
                     </View>
+                    <View>
+                        <Text>PNR Number: 123456</Text>
+                    </View>
                     <View style={styles.passengerDetails}>
                         <View style={styles.table}>
                             <View style={styles.tableRow}>
