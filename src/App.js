@@ -68,17 +68,17 @@ function App() {
   return (
     // <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
     
-    // <Search/>
+    <Search/>
     //<HomePage/>
     //<CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
-    // <Passenger/>
-    // <TermsAndConditions/>
+    //<Passenger/>
+    //<TermsAndConditions/>
     //<CheckInComplete />
     //<BookingComplete/>
     //<FlightTickets/>
     //<BoardingPass/>
     //<Booking/>
-    <UserProfile/>
+    //<UserProfile/>
   );
 }
 

@@ -37,10 +37,10 @@ const CheckInComplete = () => {
             <div className="All printable Items">
                 <div class="cf">
                     <div class="fl w-50 tc pv5">
-                
+                        <button data-bs-toggle="modal" data-bs-target="#boardingpass" className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/boardingpass.png" className="w-20"/></button> <br/>Get your Boarding Pass here
                     </div>
                     <div class="fl w-50 tc pv5 bg-black-025">
-                        <button className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><img src="/assets/images/baggage.png" className="w-80"/></button><br/>Get your Baggage Tag here
+                        <button className="f6 link dim br2 ba bw1 ph3 pv2 mb2 dib black"><Barcode className="w-30" value="PNR+LastName"/></button><br/>Take a photo of the above barcode for your baggage tag
                         
                     </div>
                 </div>

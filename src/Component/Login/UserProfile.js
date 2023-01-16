@@ -25,35 +25,36 @@ const UserProfile = () => {
                 </div>
             </nav>
             <div className="user-profile">
+                <h1 className="mt3 tc">Welcome Anand</h1>
                 <div className="cf">
-                    <div className="section1 fl w-100-m w-50 w-50-l bg-white pv3">
+                    <div className="pl5 section1 fl w-100-m w-100-ns w-50-l bg-white pv3">
                         <h3 className="tc">User Details</h3>
                         <div class="cf w-100 center">
-                            <div class=" central fl w-10 tc pv3 bg-white">
-                                First Name:
+                            <div class="fl w-20 tc pv3 bg-white">
+                                First Name :
                             </div>
                             <input id="firstName" class="info fl w-60 tc pv3 bg-white" placeholder="First Name" disabled />
                         </div>
                         <div class="cf w-100 center">
-                            <div class=" central fl w-10 tc pv3 bg-white">
-                                Last Name:
+                            <div class=" fl w-20 tc pv3 bg-white">
+                                Last Name :
                             </div>
                             <input id="lastName" class="info fl w-60 tc pv3 bg-white" placeholder="Last Name" disabled />
                         </div>
                         <div class="cf w-100 center">
-                            <div class=" central fl w-10 tc pv3 bg-white">
-                                Phone Number:
+                            <div class=" fl w-20 tc pv3 bg-white">
+                                Phone Number :
                             </div>
                             <input id="phoneNo" class="info fl w-60 tc pv3 bg-white" placeholder="Phone Number" disabled />
                         </div>
                         <div class="cf w-100 center">
-                            <div class=" central fl w-10 tc pv3 bg-white">
-                                Email Id:
+                            <div class=" fl w-20 tc pv3 bg-white">
+                                Email Id :
                             </div>
                             <input id="email" class="info fl w-60 tc pv3 bg-white" placeholder="email" disabled />
                         </div>
                     </div>
-                    <div className="fr mr5 loyalty-card w-40-l w-40 pv5 w-100-m">
+                    <div className="center fr-l mr5 loyalty-card w-40-l w-80 pv5 w-100-m">
                         <h3 className="tc mb4">Check Your Loyalty points here</h3>
                         <div class="flip-card">
                             <div class="flip-card-inner">
@@ -70,7 +71,7 @@ const UserProfile = () => {
                     </div>
                 </div>
                 <div className="Flights">
-                    <p className="pl5 fw7 f3 w-50">Flights Scheduled: <img src="/assets/images/departure.png" className="w-10" /></p>
+                    <p className="pl5 fw7 f3  w-50-m w-50-l w-100-s ">Flights Scheduled : <img src="/assets/images/departure.png" className="w-10" /></p>
                     <SearchResult />
                     <SearchResult />
                     <SearchResult />
