@@ -4,8 +4,10 @@ import axios from "axios";
 import "./login.css";
 import md5 from "md5";
 import { authService } from "../../Service/AuthService";
+import { useNavigate } from "react-router";
 const Login = () => {
 
+    const navigate=useNavigate()
     const [email , setEmail] = useState("");
     const [session , setSession] = useState("");
     const [password, setPassword] = useState("");
@@ -33,6 +35,8 @@ const Login = () => {
         // })
 
         await authService(user);
+
+        navigate("/");
 
     }
 

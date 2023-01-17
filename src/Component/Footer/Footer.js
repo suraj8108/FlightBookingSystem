@@ -2,22 +2,23 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="footer1">
-                <footer class="pa4 pa5-l black-70 bt b--black-10">
+        <div className="footer1" id="footer">
+                <footer class="pa4 pa4-l black-70 bt b--black-10">
                     <div class="cf">
-                        <h1 class="fl w-100 pv0 f6 fw6 ttu tracked ">Office Address</h1>
+                        <h1 class="fl w-100 pv0 f5 f4-l fw6 tracked ">Office Address</h1>
                         <article class="fl w-50 dib-ns w-auto-ns mr4-m mr5-l pr2 pr0-ns">
                             <h4 class="f5 f4-l fw6">Pune , India</h4>
                             <span class="f7 f6-l db black-70">Brownfield St.</span>
                             <span class="f7 f6-l black-70">Pune, MH 441016 </span>
+                            
                             <a class="f6 db fw6 pv3 black-70 link dim" title="Call SF" href="tel:+12075555555">
-                                +91 901-988-3456
+                            Phone Number: +91 901-988-3456
                             </a>
                         </article>
                     </div>
                     <section class="cf ">
                         <div class=" mb0-ns w-100 w-50-l fr">
-                            <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:hello@impossible.com" >
+                            <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:contact@brownfield.com" >
                                 contact@brownfield.com
                             </a>
                         </div>

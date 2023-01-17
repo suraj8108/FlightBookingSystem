@@ -96,9 +96,9 @@ const userDetails = async (tokenDetails) => {
       return status
   };
 
-const logout = () => {
+const logoutUser = () => {
     localStorage.removeItem("token");
   };
 
 
-  export { authService , userDetails , signup , logout};
+  export { authService , userDetails , signup , logoutUser};
