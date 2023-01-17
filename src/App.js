@@ -17,6 +17,8 @@ import BookingComplete from './Component/Booking/BookingComplete';
 import FlightTickets from './Component/Booking/FlightTickets';
 import Booking from './Component/Booking/Booking';
 import UserProfile from './Component/Login/UserProfile';
+import Header from './Component/Header/Header';
+import Footer  from './Component/Footer/Footer';
 
 function App() {
 
@@ -66,19 +68,29 @@ function App() {
   
 
   return (
-    // <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
+    <div className='App'>
+    <Header/>
+    {/* <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
     
-    //<Search/>
+    <Search/>
     <HomePage/>
-    //<CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
-    //<Passenger/>
-    //<TermsAndConditions/>
-    //<CheckInComplete />
-    //<BookingComplete/>
-    //<FlightTickets/>
-    //<BoardingPass/>
-    //<Booking/>
-    //<UserProfile/>
+    <CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
+    <Passenger/>
+    <TermsAndConditions/>
+    <CheckInComplete />
+    <BookingComplete/>
+    <FlightTickets/>
+    <BoardingPass/>
+    <Booking/>
+    <UserProfile/> */}
+    
+      <Footer/>
+       </div>
+
+
+
+
+
   );
 }
 
