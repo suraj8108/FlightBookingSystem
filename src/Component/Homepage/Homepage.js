@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "tachyons";
 import "./HomePage.css"
 import { useState } from "react";
@@ -6,9 +6,12 @@ import Select from 'react-select'
 import Login from "../Login/login";
 import Register from "../Login/Register";
 import CheckInForm from "../CheckIn/CheckInForm";
+import { toast, ToastContainer } from "react-toastify"
+import { logoutUser } from "../../Service/AuthService";
+import { useNavigate } from "react-router";
+const HomePage = (props) => {
 
-const HomePage = () => {
-
+    const navigate=useNavigate()
 
     const options = [
         {
@@ -656,6 +659,50 @@ const HomePage = () => {
     const [tripType, setTripType] = useState("One-way");
     const [tripclass, setTripClass] = useState("Economy");
     const [noOfPassengers, setNoOfPassengers] = useState(1);
+    const [departure,setDeparture]=useState("")
+    const [arrival,setArrival]=useState("")
+    const [departureDate,setDepartureDate]=useState()
+    const [arrivalDate,setArrivalDate]=useState()
+    const [search,setSearch]=useState({
+                "departureAirport":'',
+                "arrivalAirport":"",
+                "departureDate":"",
+                "returnDate":"",
+                "seatClass":"",
+                "passengers":0
+    })
+
+    const validation=()=>{
+        let date=new Date()
+        console.log(date.getTime())
+        console.log(departureDate)
+        if(departureDate==="" && departure==="" && arrival===""){
+            return false
+        }
+        if(departure===arrival){
+            return false
+        }
+        if(new Date(departureDate).getTime() <= date.getTime()){
+            return false
+        }
+        return true
+    }
+
+    const departureChange=(e)=>{
+        setDeparture(e.label)
+    }
+
+    const arrivalChange=(e)=>{
+        setArrival(e.label)
+    }
+    const departDateChange=(e)=>{
+        setDepartureDate(e.target.value)
+        console.log(e.target.value)
+    }
+    const returnDateChange=(e)=>{
+        setArrivalDate(e.target.value)
+        console.log(e.target.value)
+    }
 
     const tripTypeHandler = (e) => {
         setTripType(e.target.id);
@@ -683,6 +730,40 @@ const HomePage = () => {
         setNoOfPassengers(e.target.id);
     }
 
+    const SearchHandler= ()=>{
+        if(validation()){
+            let data={
+                "departureAirport":departure,
+                "arrivalAirport":arrival,
+                "departureDate":departureDate,
+                "returnDate":arrivalDate,
+                "seatClass":tripclass,
+                "passengers":noOfPassengers
+            }
+            setSearch(data)
+            localStorage.setItem("searchDetails",JSON.stringify(data))
+            props.setSearchDetails(data)
+            navigate("/search")
+        }
+        else{
+            toast.error("Please enter correct details")
+        }
+        
+        
+    }
+
+    const logout = () => {
+
+        logoutUser();
+
+        window.location = "/";
+
+    }
+
+    useEffect(() => {
+
+    }, [])
+
     return (
         <div class="background">
             <div class="flightsearch">
@@ -698,12 +779,51 @@ const HomePage = () => {
                                 </li>
 
                             </ul>
-                            <span class="navbar-text">
-                                <button type="button" class="btn me-2 btn-outline-dark" data-bs-toggle="modal" data-bs-target="#CheckIn">Check In</button>
-                                <button type="button" className="btn me-2 btn-outline-dark" onClick={()=>document.getElementById('footer').scrollIntoView()}>Contact us</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn me-2 btn-outline-dark">Login</button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#Register" class="btn  me-2 btn-outline-dark">Register</button>
-                            </span>
+                            {
+                                props.login ?
+                                    <>
+                                        <span className="navbar-text">
+                                            <div class="collapse navbar-collapse" id="navbar-list-4" style={{ paddingRight: "40px" }}>
+
+                                                <ul class="navbar-nav">
+                                                    <button type="button" class="btn me-2 btn-outline-dark" data-bs-toggle="modal" data-bs-target="#CheckIn">Check In</button>
+                                                    <button type="button" className="btn me-2 btn-outline-dark" onClick={() => document.getElementById('footer').scrollIntoView()}>Contact us</button>
+                                                    <li class="nav-item dropdown">
+
+                                                        <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                                            My Profile
+
+                                                        </a>
+
+                                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                                            <a class="dropdown-item" href="/">Dashboard</a>
+
+                                                            <a class="dropdown-item" href="/UserProfile">View Profile</a>
+
+                                                            <a class="dropdown-item" href="#" onClick={logout}>Log Out</a>
+
+                                                        </div>
+
+                                                    </li>
+
+                                                </ul>
+
+                                            </div>
+                                        </span>
+                                    </>
+                                    :
+                                    <>
+                                        <span class="navbar-text">
+                                            <button type="button" class="btn me-2 btn-outline-dark" data-bs-toggle="modal" data-bs-target="#CheckIn">Check In</button>
+                                            <button type="button" className="btn me-2 btn-outline-dark" onClick={() => document.getElementById('footer').scrollIntoView()}>Contact us</button>
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn me-2 btn-outline-dark">Login</button>
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#Register" class="btn  me-2 btn-outline-dark">Register</button>
+                                        </span>
+                                    </>
+                            }
+
 
                         </div>
                     </div>
@@ -777,7 +897,9 @@ const HomePage = () => {
                                     })
 
                                 }}
-                                options={options} />
+                                options={options}
+                                onChange={departureChange}
+                                 />
                         </div>
                         <div class="row2 mt-2 fl w-50-ns w-25-l pr2 tc pv1 ">
                             <img className="departure-image" src="./assets/images/arrival.png" alt="" /><br />
@@ -798,19 +920,20 @@ const HomePage = () => {
                                         textAlign: "left"
                                     })
                                 }}
-                                options={options} />
+                                options={options}
+                                onChange={arrivalChange} />
                         </div>
                         <div class="row2  mt-2 fl w-50-ns w-25-l pr2 tc pv1 ">
                             <img src="/assets/images/date.png" className="departure-image" alt="Departure Date" />
-                            <input className="dates w-100 tc " id="depart" type="date" />
+                            <input className="dates w-100 tc " id="depart" type="date" value={departureDate} onChange={departDateChange}/>
                         </div>
                         <div class="row2 mt-2 fl w-50-ns w-25-l tc pv1 ">
                             <img src="/assets/images/arrivaldate.png" className="departure-image" alt="Arrival Date" />
-                            <input className="dates w-100 tc " disabled id="return" type="date" />
+                            <input className="dates w-100 tc " disabled id="return" type="date" onChange={returnDateChange}/>
 
                         </div>
                         <div class="fl mt-2 w-100 w-20-ns tc pv2">
-                            <button class="f5 fw6 search grow w-20 ba no-underline ph3 pv2 mb2 dib white " href="#0">Search</button>
+                            <button class="f5 fw6 search grow w-20 ba no-underline ph3 pv2 mb2 dib white " href="#0" onClick={SearchHandler}>Search</button>
                         </div>
                     </div>
                 </div>
@@ -907,9 +1030,9 @@ const HomePage = () => {
                             <h4 class="f5 f4-l fw6">Pune , India</h4>
                             <span class="f7 f6-l db black-70">Brownfield St.</span>
                             <span class="f7 f6-l black-70">Pune, MH 441016 </span>
-                            
+
                             <a class="f6 db fw6 pv3 black-70 link dim" title="Call SF" href="tel:+12075555555">
-                            Phone Number: +91 901-988-3456
+                                Phone Number: +91 901-988-3456
                             </a>
                         </article>
                     </div>
@@ -987,10 +1110,10 @@ const HomePage = () => {
             <div class="modal" id="exampleModal" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        
+
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-body">
-                            <Login/>
+                            <Login />
                         </div>
                     </div>
                 </div>
@@ -998,10 +1121,10 @@ const HomePage = () => {
             <div class="modal" id="Register" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        
+
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-body">
-                            <Register/>
+                            <Register />
                         </div>
                     </div>
                 </div>
@@ -1009,14 +1132,25 @@ const HomePage = () => {
             <div class="modal" id="CheckIn" tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        
+
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-body">
-                            <CheckInForm/>
+                            <CheckInForm />
                         </div>
                     </div>
                 </div>
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                theme="dark"
+            />
         </div >
     )
 }

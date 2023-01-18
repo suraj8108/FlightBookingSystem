@@ -19,11 +19,16 @@ import Booking from './Component/Booking/Booking';
 import UserProfile from './Component/Login/UserProfile';
 import Header from './Component/Header/Header';
 import Footer  from './Component/Footer/Footer';
+import 'react-toastify/dist/ReactToastify.css';
+import { Routes , Route } from 'react-router-dom';
+import { userDetails } from './Service/AuthService';
 
 function App() {
 
+  const [searchDetails,setSearchDetails]=useState()
   const [seatsBooked , setSeatsBooked]= useState([1,2,3,4,7,97,24,65, 81, 82,84,85,86,87,88,89,90,170])
   const [passengers , setPassengers]=useState(3)
+  const [login,setLogin]=useState(false)
   const [passengerList, setPassengerList]=useState([
     {
       firstName:"anand",
@@ -46,6 +51,13 @@ function App() {
   ])
   const [type , setType]=useState("business")
 
+  const loginHandler=()=>{
+
+  }
+
+  const setSearchDets=(search)=>{
+    setSearchDetails(search)
+  }
   const CheckinHandler=(passengerlist)=>{
     
      setPassengerList(passengerlist)
@@ -65,27 +77,31 @@ function App() {
 
   const PaymentHandler=()=>{}
 
-  
+  useEffect(()=>{
+    if(localStorage.getItem("token")){
+      userDetails(localStorage.getItem("token")).then(response=>
+        setLogin(true)
+      ).catch(error=>
+        setLogin(false)
+      )
+    }
+  },[])
 
   return (
-    <div className='App'>
-    <Header/>
-    {/* <Seat seatsBooked={seatsBooked} passengers={passengers} type={type}/>
-    
-    <Search/>
-    <HomePage/>
-    <CheckInPage seatsBooked={seatsBooked} passengers={passengers} passengerList={passengerList} type={type} checkIn={CheckinHandler}/>
-    <Passenger/>
-    <TermsAndConditions/>
-    <CheckInComplete />
-    <BookingComplete/>
-    <FlightTickets/>
-    <BoardingPass/>
-    <Booking/>
-    <UserProfile/> */}
-    
-      <Footer/>
-       </div>
+    <Routes>
+      <Route path="/search" element={<Search search={searchDetails}/>}/>
+      <Route path="/" element={<HomePage login={login} setSearchDetails={setSearchDets}/>}/>
+      <Route path="/checkIn" element={<CheckInPage 
+      seatsBooked={seatsBooked} 
+      passengers={passengers} 
+      passengerList={passengerList} 
+      type={type} 
+      checkIn={CheckinHandler}/>}/>
+      <Route path="/checkIn/successful" element={<CheckInComplete />}/>
+      <Route path="/booking/successful" element={<BookingComplete />}/>
+      <Route path="/booking" element={<Booking/>}/>
+      <Route path="/userProfile" element={<UserProfile login={login}/>}/>
+    </Routes>
 
 
 

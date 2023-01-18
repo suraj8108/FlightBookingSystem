@@ -146,6 +146,12 @@ button{
     width:90vw !important;
     margin-left: -25vw !important;
 }
+@media screen and (max-width:1000px) {
+    .modal-content{
+        width:100vw !important;
+        margin-left: 0vw !important;
+    }
+}
 .modal-body{
     margin-top: -2vh;
 }

@@ -3,6 +3,7 @@ import logo from "./logo.png";
 import Login from "../Login/login";
 import Register from "../Login/Register";
 import { userDetails, logoutUser } from "../../Service/AuthService";
+import {ToastContainer} from "react-toastify"
 
 const Header = () => {
 
@@ -103,6 +104,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }

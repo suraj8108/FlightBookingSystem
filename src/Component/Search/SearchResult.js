@@ -5,28 +5,31 @@ import flightNo from "./FlightNo.png"
 const SearchResult = (props) => {
     return (
         <div class="search-card">
-            <article class="card-search center w-90 br3 hidden ba b--black-100 mv2">
+            <article id={props.flightNumber} class="card-search center w-90 br3 hidden ba b--black-100 mv2">
                 <div class="pa3">
-                    <div class="cf">
-                        <div class="fl w-30 w-10-l tc pt2 ">
-                            <h4>11:50</h4>
-                            <p>Kochi</p>
+                    <div class="cf" >
+                        <div class="fl w-30 w-10-l tc pt2 " >
+                            <h4>{props.departureTime}</h4>
+                            <p>{props.departureAirport}</p>
                         </div>
-                        <div class="fl w-0 w-20-l dn dib-ns tc pt2 ">
-                           <p>-----1hr 20mins-----></p>
+                        <div class="fl w-0 w-20-l dn dib-ns tc pt2 " >
+                           <p>-----{props.totalTime}-----></p>
                         </div>
-                        <div class="fl w-30 w-10-l tc pt2 ">
-                            <h4>13:10</h4>
-                            <p>Delhi</p>
+                        <div class="fl w-30 w-10-l tc pt2 " > 
+                            <h4>{props.arrivalTime}</h4>
+                            <p>{props.arrivalAirport}</p>
                         </div>
-                        <div class="fl w-20 w-20-l dn dib-ns tc pt2 ">
-                          <img src="/assets/images/flightNo.png" alt="flight No:" className="flightNo"/><p>BF1134</p>  
+                        <div class="fl w-20 w-20-l dn dib-ns tc pt2 " >
+                          <img src="/assets/images/flightNo.png" alt="flight No:" className="flightNo"/><p>{props.flightNumber}</p>  
                         </div>
-                        <div class="fl fw5 w-20 w-20-l tc pt2 ">
+                        <div class="fl fw5 w-20 w-20-l tc pt2 " >
                             Non-Stop
                         </div>
-                        <div class="fl fw6 h3 w-20 w-20-l tc pt2 ">
-                            $45
+                        <div class="fl fw6 h3 w-20 w-20-l tc pt2 " >
+                            {props.totalFare}
+                        </div>
+                        <div className="tr">
+                            <button id={props.flightNumber} className="btn btn-primary" onClick={props.resultHandler}>Select Flight</button>
                         </div>
                     </div>
                 </div>

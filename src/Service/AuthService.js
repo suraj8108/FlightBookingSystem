@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+
 //Get The Token
 const authService = async (JwtData) => {
     await fetch(`http://localhost:9969/token`, {
@@ -16,16 +18,16 @@ const authService = async (JwtData) => {
         console.log(data);
         if (data["token"]) {
           localStorage.setItem("token", data["token"].split(" ")[0]);
-          console.log("Login Success");
+          toast.success("Login Success");
           //window.alert(JSON.stringify(data));
         } else {
           // window.alert("Wrong Email or Password!!")
-          console.log("Login Filed");
+          toast.error("Login Failed");
         }
       })
       //Then with the error genereted...
       .catch((error) => {
-        window.alert("Something went Wrong!!");
+        toast.error("Something went Wrong!!");
         console.error("Error:", error);
       });
   };
@@ -52,7 +54,7 @@ const userDetails = async (tokenDetails) => {
   //       return error;
   // })
 
-  axios.post("http://localhost:9969/user/getMyDetails",{
+  let data=axios.post("http://localhost:9969/user/getMyDetails",{
     "data": 'sample',
    },
    {
@@ -62,15 +64,15 @@ const userDetails = async (tokenDetails) => {
      }
    })
    .then((res) => {
-     console.log(res);
+     return res.data;
    })
 
-  return "Hello";
+  return data;
 
 }
-  const signup = async (myBody, user) => {
-    console.log(myBody, user)
-    const status = await fetch(`https://apiflipxo.azurewebsites.net/${user}/register`, {
+  const signup = async (myBody) => {
+    console.log(myBody)
+    const status = await fetch("http://localhost:9969/user/signUp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,6 +82,9 @@ const userDetails = async (tokenDetails) => {
       .then((response) => response.json())
       //Then with the data from the response in JSON...
       .then((data) => {
+        toast.success("Registered Succesfully ")
+        toast.info("Please proceed to login")
+        setTimeout(window.location='/',5000)
         if (data["success"]) {
           console.log("Register Success");
           return true;
@@ -89,7 +94,7 @@ const userDetails = async (tokenDetails) => {
       })
       //Then with the error genereted...
       .catch((error) => {
-        window.alert("Something went Wrong!!");
+        toast.error("Something went Wrong!!");
         console.error("Error:", error);
         return false
       });

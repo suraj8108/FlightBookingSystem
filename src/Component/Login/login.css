@@ -20,15 +20,13 @@
     flex: 1 1 100%;
     align-items: stretch;
     justify-content: space-between;
-    box-shadow: 0 0 20px 6px #17010385;
   }
   @media (max-width: 980px) {
     .box-form {
       flex-flow: wrap;
       text-align: center;
       align-content: center;
-      align-items: center;
-      
+      align-items: center; 
     }
   }
   .box-form div {
