@@ -6,7 +6,7 @@ BrownField is an application designed for seamless flight ticket booking and to 
 ## Application Live URLs 🌐
 [BrownFiled - Flight Booking System](http://www.brownfield.s3-website.us-east-2.amazonaws.com/)
 
-[BrownField AdminUI Page](http://ngtteam4bucket.s3-website.us-east-2.amazonaws.com/Statistics)
+[BrownField - AdminUI Page](http://ngtteam4bucket.s3-website.us-east-2.amazonaws.com/Statistics)
 
 ## For In-Depth Project Details 📑
 For more detailed information about the project, refer to the [BrownField Airline Project Details document](https://github.com/Suraj8108/FlightBookingSystem/blob/master/BrownField%20Airline%20Project.docx)
