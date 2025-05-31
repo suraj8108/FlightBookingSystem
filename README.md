@@ -3,6 +3,9 @@
 ## Project Description 📄
 BrownField is an application designed for seamless flight ticket booking and to make the check-in and boarding process smooth for our clients.
 
+## Entity RelationShip Diagram
+![alt text](https://github.com/suraj8108/FlightBookingSystem/blob/master/Entity%20Relationship%20Diagram.png?raw=true)
+
 ## Application Live URLs 🌐
 [BrownFiled - Flight Booking System](http://www.brownfield.s3-website.us-east-2.amazonaws.com/)
 
